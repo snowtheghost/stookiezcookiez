@@ -9,10 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#FFF8E7",
-        "warm-brown": "#8B4513",
-        "cookie-brown": "#D2691E",
-        "dark-brown": "#3E2723",
+        "sky-blue": "#B8D9E8",
+        "light-blue": "#D4E8F0",
+        "teal": "#4A7C8C",
+        "dark-teal": "#385F6D",
+        "cookie-tan": "#E8D5B7",
+        "cream": "#FFF8E7",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
