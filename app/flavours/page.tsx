@@ -30,7 +30,7 @@ export default function Flavours() {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen" style={{ paddingTop: '100px' }}>
       {/* Header Section */}
       <section className="py-20 bg-gradient-to-br from-sky-blue via-light-blue to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -50,9 +50,8 @@ export default function Flavours() {
             {flavours.map((flavour, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-light-blue to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-sky-blue"
+                className="bg-gradient-to-br from-light-blue to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
-                <div className="text-7xl mb-6 text-center">{flavour.icon}</div>
                 <h3 className="text-2xl md:text-3xl font-bold text-dark-teal mb-4 text-center">
                   {flavour.name}
                 </h3>
@@ -67,52 +66,29 @@ export default function Flavours() {
 
       {/* Info Section */}
       <section className="py-20 bg-gradient-to-br from-light-blue to-sky-blue">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto px-8 sm:px-12 lg:px-16">
           <div className="bg-white rounded-3xl p-10 shadow-xl">
             <h2 className="text-3xl font-bold text-dark-teal mb-6 text-center">
               What Makes Our Cookies Special?
             </h2>
-            <ul className="space-y-4 text-teal text-lg">
-              <li className="flex items-start">
-                <span className="text-teal mr-3 text-2xl flex-shrink-0">•</span>
-                <span><strong>Brown Butter Base:</strong> Every cookie starts with our signature brown butter for a rich, nutty flavor</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-teal mr-3 text-2xl flex-shrink-0">•</span>
-                <span><strong>Quarter Pound Size:</strong> Big, satisfying cookies that are perfect for sharing (or not!)</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-teal mr-3 text-2xl flex-shrink-0">•</span>
-                <span><strong>No Preservatives:</strong> Freshly baked with natural ingredients only</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-teal mr-3 text-2xl flex-shrink-0">•</span>
-                <span><strong>Premium Ingredients:</strong> We use only the highest quality chocolate, matcha, and other ingredients</span>
-              </li>
-            </ul>
+            <div className="text-teal text-lg text-center space-y-4 max-w-xl mx-auto px-6">
+              <div>
+                <strong>Brown Butter Base:</strong> Every cookie starts with our signature brown butter for a rich, nutty flavor
+              </div>
+              <div>
+                <strong>Quarter Pound Size:</strong> Big, satisfying cookies that are perfect for sharing (or not!)
+              </div>
+              <div>
+                <strong>No Preservatives:</strong> Freshly baked with natural ingredients only
+              </div>
+              <div>
+                <strong>Premium Ingredients:</strong> We use only the highest quality chocolate, matcha, and other ingredients
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-teal mb-6">
-            Ready to Order?
-          </h2>
-          <p className="text-xl text-teal mb-8">
-            Mix and match your favorite flavours!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/pricing" variant="primary" size="lg">
-              View Pricing
-            </Button>
-            <Button href="/contact" variant="secondary" size="lg">
-              Contact to Order
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

@@ -8,6 +8,7 @@ interface ButtonProps {
   size?: "sm" | "md" | "lg";
   className?: string;
   onClick?: () => void;
+  icon?: string;
 }
 
 export default function Button({
@@ -18,18 +19,18 @@ export default function Button({
   className = "",
   onClick,
 }: ButtonProps) {
-  const baseStyles = "inline-block font-semibold rounded-full transition-all duration-200 text-center shadow-md hover:shadow-lg transform hover:-translate-y-0.5";
+  const baseStyles = "inline-flex items-center justify-center font-extrabold rounded-full transition-all duration-300 text-center border-4 hover:scale-105 active:scale-95 no-underline tracking-wide";
 
   const variants = {
-    primary: "bg-teal hover:bg-dark-teal text-white",
-    secondary: "bg-cookie-tan hover:bg-amber-200 text-dark-teal",
-    outline: "border-2 border-teal text-teal hover:bg-teal hover:text-white",
+    primary: "bg-[#f5f5f0] border-dark-teal text-dark-teal hover:bg-[#eeeee8] shadow-[0_6px_0_0_#385F6D] hover:shadow-[0_8px_0_0_#385F6D] active:shadow-[0_2px_0_0_#385F6D] active:translate-y-1",
+    secondary: "bg-[#f5f5f0] border-amber-600 text-amber-800 hover:bg-[#eeeee8] shadow-[0_6px_0_0_#d97706] hover:shadow-[0_8px_0_0_#d97706] active:shadow-[0_2px_0_0_#d97706] active:translate-y-1",
+    outline: "bg-[#f5f5f0] border-teal text-teal hover:bg-[#eeeee8] shadow-[0_6px_0_0_#4A7C8C] hover:shadow-[0_8px_0_0_#4A7C8C] active:shadow-[0_2px_0_0_#4A7C8C] active:translate-y-1",
   };
 
   const sizes = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-8 py-3 text-base",
-    lg: "px-10 py-4 text-lg",
+    sm: "px-8 py-3 text-sm min-w-[140px]",
+    md: "px-12 py-4 text-base min-w-[180px]",
+    lg: "px-16 py-6 text-2xl min-w-[220px]",
   };
 
   const buttonClasses = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;

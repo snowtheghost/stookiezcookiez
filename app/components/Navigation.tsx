@@ -17,78 +17,23 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/logo with words.png"
-              alt="Stookiez Cookiez"
-              width={180}
-              height={60}
-              className="h-16 w-auto"
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
+    <nav className="fixed top-0 left-0 right-0 w-full z-50" style={{ backgroundColor: '#ebd7bc', paddingTop: '1rem', paddingBottom: '1rem', margin: 0 }}>
+      <div className="w-full flex justify-center">
+        <div className="flex items-center" style={{ gap: '1rem' }}>
+          {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-lg font-medium transition-colors ${
-                  pathname === link.href
-                    ? "text-teal border-b-2 border-teal"
-                    : "text-dark-teal hover:text-teal"
+                className={`px-12 py-3 rounded-full text-lg font-extrabold transition-all border-4 hover:scale-105 active:scale-95 min-w-[160px] text-center no-underline tracking-wide ${
+                  pathname === link.href && link.href !== "/"
+                    ? "bg-cookie-tan border-amber-600 text-dark-teal shadow-[0_4px_0_0_#d97706] active:shadow-[0_1px_0_0_#d97706] active:translate-y-1"
+                    : "bg-[#f5f5f0] border-dark-teal text-dark-teal hover:bg-[#eeeee8] shadow-[0_4px_0_0_#385F6D] active:shadow-[0_1px_0_0_#385F6D] active:translate-y-1"
                 }`}
               >
                 {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-dark-teal"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {mobileMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+            </Link>
+          ))}
         </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-sky-blue">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`block py-3 text-lg font-medium transition-colors ${
-                  pathname === link.href
-                    ? "text-teal bg-light-blue"
-                    : "text-dark-teal hover:text-teal hover:bg-light-blue"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        )}
       </div>
     </nav>
   );

@@ -33,7 +33,7 @@ export default function Pricing() {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen" style={{ paddingTop: '100px' }}>
       {/* Header Section */}
       <section className="py-20 bg-gradient-to-br from-sky-blue via-light-blue to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -49,21 +49,16 @@ export default function Pricing() {
       {/* Pricing Grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
             {pricingTiers.map((tier, index) => (
               <div
                 key={index}
                 className={`rounded-3xl p-8 text-center transition-all duration-300 transform hover:-translate-y-2 ${
                   tier.popular
-                    ? "bg-gradient-to-br from-teal to-dark-teal text-white shadow-2xl scale-105 border-4 border-cookie-tan"
-                    : "bg-gradient-to-br from-light-blue to-white border-2 border-sky-blue shadow-lg hover:shadow-xl"
+                    ? "bg-gradient-to-br from-teal to-dark-teal text-white shadow-2xl"
+                    : "bg-gradient-to-br from-light-blue to-white shadow-lg hover:shadow-xl"
                 }`}
               >
-                {tier.popular && (
-                  <div className="bg-cookie-tan text-dark-teal text-sm font-bold py-2 px-4 rounded-full inline-block mb-4">
-                    MOST POPULAR
-                  </div>
-                )}
                 <h3 className={`text-2xl md:text-3xl font-bold mb-2 ${tier.popular ? "text-white" : "text-dark-teal"}`}>
                   {tier.name}
                 </h3>
@@ -73,14 +68,14 @@ export default function Pricing() {
                 <p className={`mb-6 ${tier.popular ? "text-sky-blue" : "text-teal"}`}>
                   {tier.description}
                 </p>
-                <ul className="space-y-3 mb-8">
+                <div className="mb-8 space-y-3">
                   {tier.features.map((feature, idx) => (
-                    <li key={idx} className={`flex items-center justify-center ${tier.popular ? "text-white" : "text-teal"}`}>
+                    <div key={idx} className={`flex items-center justify-center ${tier.popular ? "text-white" : "text-teal"}`}>
                       <span className="mr-2">✓</span>
                       <span>{feature}</span>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
@@ -89,51 +84,31 @@ export default function Pricing() {
 
       {/* Shipping & Delivery Info */}
       <section className="py-20 bg-gradient-to-br from-light-blue to-sky-blue">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-8 sm:px-12 lg:px-16">
           <h2 className="text-4xl md:text-5xl font-bold text-dark-teal text-center mb-12">
             Delivery & Pickup Options
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-3xl p-8 shadow-xl">
-              <div className="text-5xl mb-4 text-center">📍</div>
               <h3 className="text-2xl font-bold text-dark-teal mb-4 text-center">
                 Free Pickup
               </h3>
-              <ul className="space-y-3 text-teal">
-                <li className="flex items-start">
-                  <span className="text-teal mr-2 text-xl">•</span>
-                  <span>Bradford</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2 text-xl">•</span>
-                  <span>Scarborough/Markham</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2 text-xl">•</span>
-                  <span>And surrounding areas</span>
-                </li>
-              </ul>
+              <div className="text-teal text-center space-y-3 px-6">
+                <div>Bradford</div>
+                <div>Scarborough/Markham</div>
+                <div>And surrounding areas</div>
+              </div>
             </div>
 
             <div className="bg-white rounded-3xl p-8 shadow-xl">
-              <div className="text-5xl mb-4 text-center">📦</div>
               <h3 className="text-2xl font-bold text-dark-teal mb-4 text-center">
                 Shipping
               </h3>
-              <ul className="space-y-3 text-teal">
-                <li className="flex items-start">
-                  <span className="text-teal mr-2 text-xl">•</span>
-                  <span><strong>$15</strong> flat rate shipping</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2 text-xl">•</span>
-                  <span><strong>FREE shipping</strong> on orders over $100</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-teal mr-2 text-xl">•</span>
-                  <span>Careful packaging to ensure freshness</span>
-                </li>
-              </ul>
+              <div className="text-teal text-center space-y-3 px-6">
+                <div><strong>$15</strong> flat rate shipping</div>
+                <div><strong>FREE shipping</strong> on orders over $100</div>
+                <div>Careful packaging to ensure freshness</div>
+              </div>
             </div>
           </div>
         </div>
@@ -141,16 +116,15 @@ export default function Pricing() {
 
       {/* Additional Info */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto px-8 sm:px-12 lg:px-16">
           <div className="bg-gradient-to-br from-light-blue to-sky-blue rounded-3xl p-10 shadow-xl text-center">
-            <div className="text-5xl mb-4">🎉</div>
             <h3 className="text-3xl font-bold text-dark-teal mb-4">
               Custom Orders for Events
             </h3>
-            <p className="text-xl text-teal mb-6">
+            <p className="text-xl text-teal mb-6 max-w-xl mx-auto px-6">
               Smaller sized cookies can be made for events such as weddings, parties, and corporate gatherings.
             </p>
-            <p className="text-lg text-teal mb-8">
+            <p className="text-lg text-teal mb-8 max-w-xl mx-auto px-6">
               Contact us for details and custom pricing!
             </p>
             <Button href="/contact" variant="primary" size="lg">
@@ -160,25 +134,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-sky-blue to-light-blue">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-teal mb-6">
-            Ready to Place an Order?
-          </h2>
-          <p className="text-xl text-teal mb-8">
-            Contact us today to order your delicious cookies!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="primary" size="lg">
-              Contact Us
-            </Button>
-            <Button href="/flavours" variant="secondary" size="lg">
-              View Flavours
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

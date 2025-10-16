@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+
+const poppins = Poppins({
+  weight: ["400", "600", "700", "800"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Stookiez Cookiez - Gourmet Brown Butter Cookies",
@@ -15,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className={`${poppins.className} antialiased`}>
         <Navigation />
         <main>{children}</main>
         <Footer />

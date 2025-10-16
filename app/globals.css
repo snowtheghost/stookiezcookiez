@@ -3,14 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --background: #D4E8F0;
+  --background: #c6e2ee;
   --foreground: #385F6D;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 @layer utilities {
@@ -21,4 +28,6 @@ body {
 
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
