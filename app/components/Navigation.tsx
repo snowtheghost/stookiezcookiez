@@ -49,7 +49,7 @@ export default function Navigation() {
               key={link.href}
               href={link.href}
               className={`px-12 py-3 rounded-full text-lg font-extrabold transition-all border-4 hover:scale-105 active:scale-95 min-w-[160px] text-center no-underline tracking-wide ${
-                pathname === link.href && link.href !== "/"
+                pathname === link.href
                   ? "bg-cookie-tan border-amber-600 text-dark-teal shadow-[0_4px_0_0_#d97706] active:shadow-[0_1px_0_0_#d97706] active:translate-y-1"
                   : "bg-[#f5f5f0] border-dark-teal text-dark-teal hover:bg-[#eeeee8] shadow-[0_4px_0_0_#385F6D] active:shadow-[0_1px_0_0_#385F6D] active:translate-y-1"
               }`}
