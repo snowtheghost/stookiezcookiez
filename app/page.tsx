@@ -3,9 +3,9 @@ import Button from "./components/Button";
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Hero/Landing Section */}
-      <section className="h-screen flex flex-col items-center justify-center bg-sky-blue px-4" style={{ marginTop: '-5rem' }}>
+      <section className="h-screen flex flex-col items-center justify-center bg-sky-blue px-4" style={{ paddingTop: '5rem' }}>
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center flex-1">
           <div className="flex justify-center mb-8">
             <Image
