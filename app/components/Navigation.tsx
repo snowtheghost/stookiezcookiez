@@ -74,7 +74,7 @@ export default function Navigation() {
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
               className={`rounded-full text-2xl font-extrabold transition-all border-4 active:scale-95 text-center no-underline tracking-wide whitespace-nowrap ${
-                pathname === link.href && link.href !== "/"
+                pathname === link.href
                   ? "bg-cookie-tan border-amber-600 text-dark-teal shadow-[0_8px_0_0_#d97706] active:shadow-[0_2px_0_0_#d97706] active:translate-y-2"
                   : "bg-[#f5f5f0] border-dark-teal text-dark-teal shadow-[0_8px_0_0_#385F6D] active:shadow-[0_2px_0_0_#385F6D] active:translate-y-2"
               }`}
