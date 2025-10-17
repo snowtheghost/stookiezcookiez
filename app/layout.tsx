@@ -13,6 +13,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Stookiez Cookiez - Gourmet Brown Butter Cookies",
   description: "Specializing in gourmet brown butter cookies with indulging flavours. Big, freshly baked, quarter pound cookies made with no preservatives.",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
 };
 
 export default function RootLayout({
