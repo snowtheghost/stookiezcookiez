@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
@@ -13,7 +13,12 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Stookiez Cookiez - Gourmet Brown Butter Cookies",
   description: "Specializing in gourmet brown butter cookies with indulging flavours. Big, freshly baked, quarter pound cookies made with no preservatives.",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
